@@ -17,7 +17,7 @@ class UserInput(BaseModel):
 @app.post("/think")
 def think(user_input: UserInput):
     response = client.models.generate_content(
-        model='gemini-2.5-flash',
+        model='gemini-3.6-flash',
         contents=user_input.message
     )
     return {"ikigai_says": response.text}
